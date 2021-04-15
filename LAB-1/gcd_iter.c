@@ -6,8 +6,8 @@ int gcd(int m,int n)
       r=m%n;
       m=n;
       n=r;
-      return r;
     } while(n!=0);
+    return m;
 }
 int main()
 {
