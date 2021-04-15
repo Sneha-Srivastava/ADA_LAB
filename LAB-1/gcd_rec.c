@@ -1,13 +1,9 @@
 #include <stdio.h>
 int gcd(int m,int n)
 {
-    int r;
-    do{
-      r=m%n;
-      m=n;
-      n=r;
-      return r;
-    } while(n!=0);
+    if(n==0) return m;
+    if(m<n) return gcd(n,m);
+    return gcd(n,m%n);
 }
 int main()
 {
@@ -15,6 +11,5 @@ int main()
     printf("Enter m and n\n");
     scanf("%d%d",&m,&n);
     res=gcd(m,n);
-    printf("The GCD of %d and %d is %d.\n",m,n,res);
-
-}
+    printf("GCD of %d and %d is %d.\n",m,n,res); 
+} 
